@@ -2,3 +2,11 @@ leecode
 https://leetcode-cn.com/problemset/all/
 git clone https://github.com/why0406/leecode.git
 test from oracle_hzz redhat5
+redhat5 use ssh:
+	git init
+	git remote add origin git@github.com:TrackyTian/testSSH.git //连接远程仓库
+	git pull --rebase origin master //把远程仓库拉下来
+	git add newfile //将仓库所有文件都添加到版本控制库中
+	git commit -m "Person" //提交
+	git push origin master //将代码添加到master分支
+
