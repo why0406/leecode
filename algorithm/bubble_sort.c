@@ -18,12 +18,18 @@ void swap(int *a, int *b)
 void BubbleSort(int *array, int width)
 {
     int i, j;
+    int flag = 0;
     for(i = 0; i < width; i++) {
+        flag = 0;
         for(j = 0; j < width-i-1; j++) { //注意内循环次数要减一，否则最长长度加一以后就溢出了
+            flag = 0;
             if(array[j] > array[j+1]) {
                 swap(&array[j], &array[j+1]); //传递地址
+                flag = 1;
             }
         }
+        if(flag == 0) //添加排序完成标志位
+            break;
     }
     return ;
 }
