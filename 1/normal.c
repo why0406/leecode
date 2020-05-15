@@ -49,7 +49,7 @@ int* twoSum(int* nums, int numsSize, int target, int* returnSize)
                     renums[0] = i;
                     renums[1] = j;
                     *returnSize = 2;
-					printf("num[%d]=%d, num[%d]=%d, target=%d\n", i, nums[i], j, nums[j], target);
+                    printf("num[%d]=%d, num[%d]=%d, target=%d\n", i, nums[i], j, nums[j], target);
                     return renums;
                 }
             }
