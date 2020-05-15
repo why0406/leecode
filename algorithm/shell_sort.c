@@ -15,20 +15,19 @@ void swap(int *a, int *b)
     *b = tmp;
 }
 
-void BubbleSort(int *array, int width)
+void ShellSort(int *array, int width)
 {
     int i, j;
     int flag = 0;
+    int gap = 4;
     for(i = 0; i < width; i++) {
-        flag = 0;
-        for(j = 0; j < width-i-1; j++) { //注意内循环次数要减一，否则最长长度加一以后就溢出了
-            if(array[j] > array[j+1]) {
-                swap(&array[j], &array[j+1]); //传递地址
-                flag = 1;
+        for(j = 0; j < width-gap; j++) { //注意内循环次数要减一，否则最长长度加一以后就溢出了
+            if(array[j] > array[j+gap]) {
+                swap(&array[j], &array[j+gap]); //传递地址
             }
         }
-        if(flag == 0) //添加排序完成标志位
-            break;
+        if(gap > 1)
+            gap = gap / 2;
     }
     return ;
 }
@@ -38,7 +37,7 @@ int main(int argc, char *argv[])
     int array[6] = {-1,0,1,2,-1,-4};
     int width = sizeof(array)/sizeof(int);
 
-    BubbleSort(array, width);//数组名传参，数组首（元素）地址
+    ShellSort(array, width);//数组名传参，数组首（元素）地址
     PrintArray(array, width);
     return 0;
 }
